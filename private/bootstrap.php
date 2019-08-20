@@ -1,8 +1,10 @@
 <?php
 
+define("PROJECT_NAME","Battery Tracker");
 define("PRIVATE_PATH",dirname(__FILE__).'/');
 define("PUBLIC_PATH",getcwd()."/");
-define("INCLUDES",PRIVATE_PATH.'/includes/');
+define("INCLUDES",PRIVATE_PATH.'includes/');
+define("PAGES",INCLUDES.'pages/');
 
 
 // require_once('functions.php');

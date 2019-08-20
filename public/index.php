@@ -1,10 +1,10 @@
 <?php require_once('../private/bootstrap.php'); ?>
-<?php if($_SERVER['REQUEST_METHOD']=='GET') { require_once(INCLUDES.'header.phtml'); } ?>
+
 
 <?php
 $router = new Router;
 $router->get('/', function() {
-  echo "<h1>Hello World</h1>";
+  Pages::load("home");
 });
 
 $router->post('/battery/save/(\d)',function ($id) {
@@ -22,5 +22,3 @@ $router->post('/battery/save/(\d)',function ($id) {
 //   echo "</pre>\n";
 // }
  ?>
-
-<?php if($_SERVER['REQUEST_METHOD']=='GET') { require_once(INCLUDES.'footer.phtml'); }?>
