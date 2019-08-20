@@ -1,30 +1,30 @@
-<h1>Battery Tracker</h1>
-<?php $list = Battery::getAll(); ?>
 <div class="container">
-  <div class="col-sm">
-    <table class="table">
-      <thead>
-        <tr>
-          <td scope="col">ID</td>
-          <td scope="col">Brand</td>
-          <td scope="col">Model</td>
-          <td scope="col">C Rating</td>
-          <td scope="col">Capacity</td>
-          <td scope="col">Action</td>
-        </tr>
-      </thead>
-      <tbody>
-      <?php foreach($list as $item): ?>
+  <h1>Battery Tracker</h1>
+  <?php $list = Battery::getAll(); ?>
+    <div class="col-sm">
+      <table class="table">
+        <thead>
           <tr>
-            <th scope="row"><?php echo sprintf("%05d",$item->id); ?></th>
-            <td><?php echo $item->brand; ?></td>
-            <td><?php echo $item->model; ?></td>
-            <td><?php echo $item->c_rating; ?></td>
-            <td><?php echo $item->capacity; ?></td>
-            <td><a href="#">View Details</a> | <a href="#">Edit</a></td>
+            <td scope="col">ID</td>
+            <td scope="col">Brand</td>
+            <td scope="col">Model</td>
+            <td scope="col">C Rating</td>
+            <td scope="col">Capacity</td>
+            <td scope="col">&nbsp;</td>
           </tr>
-        <?php endforeach; ?>
-      </tbody>
-   </table>
-  </div>
+        </thead>
+        <tbody>
+        <?php foreach($list as $item): ?>
+            <tr>
+              <th scope="row"><?php echo sprintf("%05d",$item->id); ?></th>
+              <td><?php echo $item->brand; ?></td>
+              <td><?php echo $item->model; ?></td>
+              <td><?php echo $item->c_rating; ?></td>
+              <td><?php echo $item->capacity; ?></td>
+              <td><a href="/battery/details/<?php echo $item->id;?>" class="btn btn-primary btn-sm" role="button">Details</a></td>
+            </tr>
+          <?php endforeach; ?>
+        </tbody>
+     </table>
+    </div>
 </div>

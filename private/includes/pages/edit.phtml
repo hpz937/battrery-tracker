@@ -1,0 +1,41 @@
+<div class="container">
+  <h1>Battery Edit</h1>
+  <?php if($battery = Battery::getById(Pages::$id[0])): ?>
+  <form method="post" action="/battery/save/<?php echo $battery->id; ?>">
+    <input type="hidden" name="date_added" value="<?php echo $battery->date_added ?>">
+    <div class="form-group row col-sm text-right">
+      <label for="id" class="col-sm-2 col-form-label">ID</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" id="id" name="id" value="<?php echo $battery->id;?>" readonly>
+      </div>
+    </div>
+    <div class="form-group row col-sm text-right">
+      <label for="brand" class="col-sm-2 col-form-label">Brand</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" id="brand" name="brand" value="<?php echo $battery->brand;?>">
+      </div>
+    </div>
+    <div class="form-group row col-sm text-right">
+      <label for="model" class="col-sm-2 col-form-label">Model</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" id="model" name="model" value="<?php echo $battery->model;?>">
+      </div>
+    </div>
+    <div class="form-group row col-sm text-right">
+      <label for="c_rating" class="col-sm-2 col-form-label">C Rating</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" id="c_rating" name="c_rating" value="<?php echo $battery->c_rating;?>">
+      </div>
+    </div>
+    <div class="form-group row col-sm text-right">
+      <label for="capacity" class="col-sm-2 col-form-label">Capacity</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" id="capacity" name="capacity" value="<?php echo $battery->capacity;?>">
+      </div>
+    </div>
+    <div class="col-sm-2 offset-sm-2">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+  <?php endif; ?>
+</div>

@@ -7,7 +7,7 @@ define("INCLUDES",PRIVATE_PATH.'includes/');
 define("PAGES",INCLUDES.'pages/');
 
 
-// require_once('functions.php');
+require_once('functions.php');
 require_once('db_credentials.php');
 require_once('db_functions.php');
 

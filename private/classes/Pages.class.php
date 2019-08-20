@@ -1,6 +1,7 @@
 <?php
 class Pages {
   static protected $page_title;
+  static public $id;
 
   static public function load($name) {
     $filename = PAGES.$name.'.phtml';

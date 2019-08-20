@@ -26,6 +26,9 @@ class Battery extends SqlClass {
 			$i_fields .= self::$database->escape_string($field).",";
 			$i_values .= "'".self::$database->escape_string($value)."',";
 			if($field!='id') {
+				if($field=='date_added' and empty($value)) {
+					$value = date('Y-m-d');
+				}
 				$u_values .= self::$database->escape_string($field)."='".self::$database->escape_string($value)."',";
 			}
 		}
