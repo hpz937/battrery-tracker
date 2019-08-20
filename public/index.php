@@ -14,11 +14,3 @@ $router->post('/battery/save/(\d)',function ($id) {
   $battery->save();
 });
 ?>
-<?php
-// $list = Battery::getAll();
-// foreach($list as $item) {
-//   echo "<pre>";
-//   var_dump($item);
-//   echo "</pre>\n";
-// }
- ?>
